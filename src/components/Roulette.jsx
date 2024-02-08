@@ -3,32 +3,34 @@ import { useState } from 'react';
 function RusRoulette() {
   const [bullet, setBullet] = useState(Math.floor(Math.random() * 6) + 1);
   const [count, setCount] = useState(6);
-  const [btnMsg, setBtnMsg] = useState('shoot gun');
-  const [text, setText] = useState(count + ' shots left');
-  const [liveGame, setLiveGame] = useState(true);
+  const [shotsLeftText, setShotsLeftText] = useState(count + ' shots left');
+  const [clickBangText, setClickBangText] = useState('');
+
   const shoot = () => {
     console.log(count);
     console.log('the bullet is in chamber ' + bullet);
     setCount(count - 1);
-    setText(count - 1 + ' shots left');
-    // setCount((count) => count + 1);
+    setShotsLeftText(count - 1 + ' shots left');
+
     if (count === bullet) {
       console.log('BANG');
-      setLiveGame(false);
-      setText('BANG');
-      setBtnMsg('Play Again?');
+      setClickBangText('BANG');
+      setShotsLeftText('');
+      reload();
     } else {
       console.log('click');
-      setBtnMsg('shoot gun');
+      setClickBangText('click');
     }
   };
-  if (liveGame === false) {
-    setLiveGame(true);
+
+  const reload = () => {
     setCount(6);
     setBullet(Math.floor(Math.random() * 6) + 1);
-  }
+    console.log('the bullet is in chamber ' + bullet);
+  };
+
   if (count === 0) {
-    setCount(6);
+    reload();
   }
 
   return (
@@ -37,9 +39,12 @@ function RusRoulette() {
         <h1>Russian Roulette</h1>
       </div>
       <div className="card">
-        <button onClick={shoot}>{btnMsg}</button>
+        <button onClick={shoot}>shoot gun</button>
+        <button onClick={reload}>Reload?</button>
       </div>
-      <div>{text}</div>
+      <div>
+        {clickBangText} {shotsLeftText}
+      </div>
     </>
   );
 }
