@@ -5,6 +5,7 @@ function RusRoulette() {
   const [count, setCount] = useState(6);
   const [shotsLeftText, setShotsLeftText] = useState(count + ' shots left');
   const [clickBangText, setClickBangText] = useState('');
+  // const [gameOver, setGameOver] = useState(false)
 
   const shoot = () => {
     console.log(count);
@@ -16,18 +17,18 @@ function RusRoulette() {
       console.log('BANG');
       setClickBangText('BANG');
       setShotsLeftText('');
-      reload();
+      // reload();
     } else {
       console.log('click');
       setClickBangText('click');
     }
   };
 
-  const reload = () => {
-    setCount(6);
-    setBullet(Math.floor(Math.random() * 6) + 1);
-    console.log('the bullet is in chamber ' + bullet);
-  };
+  // const reload = () => {
+  //   setCount(6);
+  //   setBullet(Math.floor(Math.random() * 6) + 1);
+  //   // window.location.reload();
+  // };
 
   if (count === 0) {
     reload();
@@ -40,7 +41,7 @@ function RusRoulette() {
       </div>
       <div className="card">
         <button onClick={shoot}>shoot gun</button>
-        <button onClick={reload}>Reload?</button>
+        {/* <button onClick={reload}>Reload?</button> */}
       </div>
       <div>
         {clickBangText} {shotsLeftText}
