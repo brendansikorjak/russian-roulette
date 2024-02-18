@@ -1,22 +1,22 @@
-import GameOver from '../pages/GameOver';
-import RusRoulette from './Roulette';
+// import GameOver from '../pages/GameOver';
+// import RusRoulette from './Roulette';
 
-function RouletteContainer() {
-  const [gameOver, setGameOver] = useState(false);
+// function RouletteContainer() {
+//   const [gameOver, setGameOver] = useState(false);
 
-  const renderPage = () => {
-    if (gameOver) {
-      return <GameOver />;
-    }
-    if (!gameOver) {
-      return <RusRoulette />;
-    }
-  };
+//   const renderPage = () => {
+//     if (gameOver) {
+//       return <GameOver />;
+//     }
+//     if (!gameOver) {
+//       return <RusRoulette />;
+//     }
+//   };
 
-  return (
-    <div>
-      <main className="mx-3">{renderPage()}</main>
-    </div>
-  );
-}
-export default RouletteContainer;
+//   return (
+//     <div>
+//       <main className="mx-3">{renderPage()}</main>
+//     </div>
+//   );
+// }
+// export default RouletteContainer;

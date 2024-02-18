@@ -17,7 +17,7 @@ function RusRoulette() {
       console.log('BANG');
       setClickBangText('BANG');
       setShotsLeftText('');
-      reload();
+      // reload();
       setGameOver(true);
     } else {
       console.log('click');
@@ -26,29 +26,60 @@ function RusRoulette() {
   };
 
   const reload = () => {
-    setCount(6);
-    setBullet(Math.floor(Math.random() * 6) + 1);
-    //   // window.location.reload();
+    window.location.reload();
   };
 
-  if (count === 0) {
-    reload();
-  }
+  const renderPage = () => {
+    if (gameOver) {
+      return (
+        <>
+          <div>
+            <h1>BANG</h1>
+          </div>
+          <div>
+            <button onClick={reload}>Reload</button>
+          </div>
+        </>
+      );
+    }
+    if (!gameOver) {
+      return (
+        <>
+          <div>
+            <h1>Russian Roulette</h1>
+          </div>
+          <div className="card">
+            <button onClick={shoot}>shoot gun</button>
+          </div>
+          <div>
+            {clickBangText} {shotsLeftText}
+          </div>
+        </>
+      );
+    }
+  };
 
   return (
-    <>
-      <div>
-        <h1>Russian Roulette</h1>
-      </div>
-      <div className="card">
-        <button onClick={shoot}>shoot gun</button>
-        {/* <button onClick={reload}>Reload?</button> */}
-      </div>
-      <div>
-        {clickBangText} {shotsLeftText}
-      </div>
-    </>
+    <div>
+      <main className="mx-3">{renderPage()}</main>
+    </div>
   );
 }
+
+//   return (
+//     <>
+//       <div>
+//         <h1>Russian Roulette</h1>
+//       </div>
+//       <div className="card">
+//         <button onClick={shoot()}>shoot gun</button>
+//         {/* <button onClick={reload}>Reload?</button> */}
+//       </div>
+//       <div>
+//         {clickBangText} {shotsLeftText}
+//       </div>
+//     </>
+//   );
+// }
 
 export default RusRoulette;
