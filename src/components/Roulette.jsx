@@ -5,7 +5,7 @@ function RusRoulette() {
   const [count, setCount] = useState(6);
   const [shotsLeftText, setShotsLeftText] = useState(count + ' shots left');
   const [clickBangText, setClickBangText] = useState('');
-  // const [gameOver, setGameOver] = useState(false)
+  const [gameOver, setGameOver] = useState(false);
 
   const shoot = () => {
     console.log(count);
@@ -17,18 +17,19 @@ function RusRoulette() {
       console.log('BANG');
       setClickBangText('BANG');
       setShotsLeftText('');
-      // reload();
+      reload();
+      setGameOver(true);
     } else {
       console.log('click');
       setClickBangText('click');
     }
   };
 
-  // const reload = () => {
-  //   setCount(6);
-  //   setBullet(Math.floor(Math.random() * 6) + 1);
-  //   // window.location.reload();
-  // };
+  const reload = () => {
+    setCount(6);
+    setBullet(Math.floor(Math.random() * 6) + 1);
+    //   // window.location.reload();
+  };
 
   if (count === 0) {
     reload();

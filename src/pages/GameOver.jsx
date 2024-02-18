@@ -1,8 +1,12 @@
-export default function GameOver() {
+import RusRoulette from './Roulette';
+
+function GameOver() {
   const reload = () => {
     setCount(6);
     setBullet(Math.floor(Math.random() * 6) + 1);
+    console.log('test');
   };
+
   return (
     <>
       <div>
@@ -14,3 +18,5 @@ export default function GameOver() {
     </>
   );
 }
+
+export default GameOver;
