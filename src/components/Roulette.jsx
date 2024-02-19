@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import GameOver from '../pages/GameOver';
 
 function RusRoulette() {
   const [bullet, setBullet] = useState(Math.floor(Math.random() * 6) + 1);
@@ -17,7 +18,6 @@ function RusRoulette() {
       console.log('BANG');
       setClickBangText('BANG');
       setShotsLeftText('');
-      // reload();
       setGameOver(true);
     } else {
       console.log('click');
@@ -31,16 +31,7 @@ function RusRoulette() {
 
   const renderPage = () => {
     if (gameOver) {
-      return (
-        <>
-          <div>
-            <h1>BANG</h1>
-          </div>
-          <div>
-            <button onClick={reload}>Reload</button>
-          </div>
-        </>
-      );
+      return <GameOver reload={reload} />;
     }
     if (!gameOver) {
       return (
@@ -65,21 +56,5 @@ function RusRoulette() {
     </div>
   );
 }
-
-//   return (
-//     <>
-//       <div>
-//         <h1>Russian Roulette</h1>
-//       </div>
-//       <div className="card">
-//         <button onClick={shoot()}>shoot gun</button>
-//         {/* <button onClick={reload}>Reload?</button> */}
-//       </div>
-//       <div>
-//         {clickBangText} {shotsLeftText}
-//       </div>
-//     </>
-//   );
-// }
 
 export default RusRoulette;
