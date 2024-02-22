@@ -1,8 +1,8 @@
 import './App.css';
-import RusRoulette from './components/Roulette';
+import Home from './components/Home';
 
 function App() {
-  return <RusRoulette />;
+  return <Home />;
 }
 
 export default App;
