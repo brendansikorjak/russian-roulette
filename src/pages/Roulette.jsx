@@ -1,3 +1,5 @@
+// import '../styles/Roulette.css';
+
 function Roulette({ shoot, clickBangText, shotsLeftText }) {
   return (
     <>

@@ -50,6 +50,20 @@ function Home() {
       <main className="mx-3">{renderPage()}</main>
     </div>
   );
+
+  //   return (
+  //     <div className={gameOver ? 'game-over' : ''}>
+  //       {gameOver ? (
+  //         <GameOver reload={reload} />
+  //       ) : (
+  //         <Roulette
+  //           shoot={shoot}
+  //           clickBangText={clickBangText}
+  //           shotsLeftText={shotsLeftText}
+  //         />
+  //       )}
+  //     </div>
+  //   );
 }
 
 export default Home;

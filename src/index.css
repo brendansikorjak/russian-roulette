@@ -21,6 +21,16 @@ body {
   min-height: 100vh;
 }
 
+/* .game-over {
+  background-color: darkred;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  flex-direction: column;
+  justify-content: center;
+} */
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
