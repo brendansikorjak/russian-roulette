@@ -4,9 +4,7 @@ function GameOver({ reload }) {
   return (
     <div>
       <style>
-        {
-          'body { background-color:  #1c0352; animation-name: example; animation-duration: 5s; animation-fill-mode: forwards; }'
-        }
+        {'body { background-color:  #1c0352; animation: leak 5s forwards; }'}
       </style>
       <div>
         <h1 className="bang">BANG</h1>

@@ -2,7 +2,7 @@
   color: black;
 }
 
-@keyframes example {
+@keyframes leak {
   from {
     background-color: #1c0352;
   }
