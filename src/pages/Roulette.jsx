@@ -2,7 +2,8 @@
 
 function Roulette({ shoot, clickBangText, shotsLeftText }) {
   return (
-    <>
+    <div>
+      <style>{'body { background-color: #1c0352 ; }'}</style>
       <div>
         <h1>Russian Roulette</h1>
       </div>
@@ -12,7 +13,7 @@ function Roulette({ shoot, clickBangText, shotsLeftText }) {
       <div>
         {clickBangText} {shotsLeftText}
       </div>
-    </>
+    </div>
   );
 }
 
